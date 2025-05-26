@@ -1,0 +1,85 @@
+body{
+    font-family: 'GongGothicMedium', sans-serif;
+    margin: 0% 20% 0% 20%;
+    background-color: rgb(136, 94, 167);
+}
+
+header {    
+  position: fixed;
+  top: 0;
+  left: 20%;
+  width: 60%;
+  height: 13.5%; /* 예시 높이 */
+  background-color: #512772; /* 배경색 없으면 스크롤 시 내용 겹쳐 보일 수 있음 */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+}
+
+#mainPageTitle{
+    text-align: center;
+    width: 100%;
+    margin-left: 15%;
+    color: #FFFFFF;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+}
+.mainPageHeaderBtns{
+    display: flex;
+    flex-direction: column;
+    text-align: right;
+    width: 20%;
+    margin : 1% 4% 1% 5%;
+}
+
+.mainPageHeaderBtns button {
+    font-family: 'GongGothicMedium', sans-serif;
+    margin-top: 5%;
+    padding: 6% 0% 6% 0%;
+    border-radius: 8px;
+}
+
+
+main{
+    margin-bottom: 6%;
+    background-color: #FFFFFF;
+    min-height: 100vh;
+}
+
+.searchBar{
+    text-align: center;
+}
+
+.searchBar input{
+    font-family: 'GongGothicMedium', sans-serif;
+    margin-top: 15%;
+    width: 50%;
+    padding: 1% 0% 1% 1%;
+}
+
+.searchBar #recipeSearchBtn{
+    font-family: 'GongGothicMedium', sans-serif;
+    padding: 0.8% 1.5% 1% 1.5%;
+    margin-left: 1%;
+}
+
+
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 20;
+  width: 60%;
+  height: 8%; /* 예시 높이 */
+  background-color: #B69AC8;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+}
+
+.banner h2{
+    color: #FFFFFF;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+}
