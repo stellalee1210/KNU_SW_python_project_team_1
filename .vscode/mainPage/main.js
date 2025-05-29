@@ -6,10 +6,10 @@ const signUpBtn = document.getElementById("signUpBtn");
 function onClickMyPageTitle() {
   console.log("click title");
 }
-function onClickLogin() {
+//function onClickLogin() {
   //  window.location.href = "/loginPage/login.html";
-  console.log("click log in");
-}
+  //console.log("click log in");
+//}
 
 function onClickSignUp() {
   console.log("click sign up");
