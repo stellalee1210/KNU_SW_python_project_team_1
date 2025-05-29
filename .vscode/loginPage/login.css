@@ -4,20 +4,29 @@ body{
     background-color: rgb(136,94,167);
 }
 header{
-    width: 100%;
-    height: 120px;
-    background-color: #512772;
+    position: fixed;
+    top: 0;
+    left: 20%;
+    width: 60%;
+    height: 13.5%; /* 예시 높이 */
+    background-color: #512772; /* 배경색 없으면 스크롤 시 내용 겹쳐 보일 수 있음 */
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    z-index: 1000;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
 }
 #mainPageTitle{
     text-align: center;
     width: 100%;
-    margin-left: 15%;
     color: #FFFFFF;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+}
+#loginContainer {
+    color: white;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+    font-size: 2rem;
+    text-align: center;
 }
 main{
     background-color: #ffffff;
@@ -26,12 +35,13 @@ main{
     display: flex;
     justify-content: center;
 }
-.login-container {
+.loginContainer {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 40%;
     min-width: 300px;
+    color: #FFFFFF;
 }
 
 .login-input {
