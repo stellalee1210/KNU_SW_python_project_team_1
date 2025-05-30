@@ -9,7 +9,7 @@ function onClickLogin() {
 
   console.log("click log in");
 
-  // 로그인 성공 시 메인페이지로 이동
+  // 로그인 성공 시 메인페이지로 이동~
   window.location.href = "/mainPage/main.html";
 }
 
@@ -18,3 +18,10 @@ document.getElementById("signUpBtn").onclick = function () {
   console.log("click sign up");
   window.location.href = "/signupPage/signup.html";
 };
+
+function onClickMyPageTitle() { //배너의 자취밥을 누르면 메인페이지로 이동.
+  console.log("click title");
+  window.location.href = "../mainPage/main.html";  // 상대경로로 이동
+}
+
+document.getElementById("mainPageTitle").addEventListener("click", onClickMyPageTitle);
