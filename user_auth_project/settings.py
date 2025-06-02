@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
     'users',
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
@@ -50,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'user_auth_project.urls'
@@ -128,3 +130,12 @@ STATIC_URL = 'static/'
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+# 🔐 CORS 관련 설정
+CORS_ALLOW_ALL_ORIGINS = True      # 모든 도메인에서 API 호출 허용
+# CORS_ALLOW_CREDENTIALS = True    # (선택) 인증 정보 포함 허용 시
+# CORS_ALLOWED_ORIGINS = [         # (선택) 특정 도메인만 허용할 때
+#     "http://localhost:3000",
+#     "http://127.0.0.1:5500",
+# ]
+
