@@ -12,6 +12,7 @@ function onClickLogin() {
 }
 
 function onClickSignUp() {
+  window.location.href = "../signupPage/signup.html";
   console.log("click sign up");
 }
 

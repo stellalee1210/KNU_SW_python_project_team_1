@@ -1,6 +1,13 @@
+const loginBtn = document.getElementById("loginBtn");
+const signUpBtn = document.getElementById("signUpBtn");
+const mainPageTitle = document.getElementById("mainPageTitle");
+
 function onClickLogin() {
-  const username = document.getElementById("username").value.trim();
-  const password = document.getElementById("password").value.trim();
+  const usernameInput = document.getElementById("userName");
+  const passwordInput = document.getElementById("password");
+
+  const username = usernameInput.value.trim();
+  const password = passwordInput.value.trim();
 
   if (!username || !password) {
     alert("아이디와 비밀번호를 모두 입력해주세요.");
@@ -13,15 +20,16 @@ function onClickLogin() {
   window.location.href = "/mainPage/main.html";
 }
 
-// 회원가입 버튼 클릭 시
-document.getElementById("signUpBtn").onclick = function () {
+function onClickSignUp() {
   console.log("click sign up");
   window.location.href = "/signupPage/signup.html";
-};
-
-function onClickMyPageTitle() { //배너의 자취밥을 누르면 메인페이지로 이동.
-  console.log("click title");
-  window.location.href = "../mainPage/main.html";  // 상대경로로 이동
 }
 
-document.getElementById("mainPageTitle").addEventListener("click", onClickMyPageTitle);
+function onClickMyPageTitle() {
+  console.log("click title");
+  window.location.href = "/mainPage/main.html";
+}
+
+loginBtn.addEventListener("click", onClickLogin);
+signUpBtn.addEventListener("click", onClickSignUp);
+mainPageTitle.addEventListener("click", onClickMyPageTitle);
