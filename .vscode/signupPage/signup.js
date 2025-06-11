@@ -11,4 +11,10 @@ document.getElementById("registerBtn").addEventListener("click", function () {
 
   alert("회원가입이 완료되었습니다!");
   // 실제 서비스라면 이 부분에서 서버로 데이터 전송
+  
 });
+function onClickMyPageTitle() {
+  console.log("click title");
+  window.location.href = "../mainPage/main.html";
+}
+mainPageTitle.addEventListener("click", onClickMyPageTitle);

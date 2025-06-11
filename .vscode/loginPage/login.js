@@ -17,17 +17,17 @@ function onClickLogin() {
   console.log("click log in");
 
   // 로그인 성공 시 메인페이지로 이동~
-  window.location.href = "/mainPage/main.html";
+  window.location.href = "../mainPage/main.html";
 }
 
 function onClickSignUp() {
   console.log("click sign up");
-  window.location.href = "/signupPage/signup.html";
+  window.location.href = "../signupPage/signup.html";
 }
 
 function onClickMyPageTitle() {
   console.log("click title");
-  window.location.href = "/mainPage/main.html";
+  window.location.href = "../mainPage/main.html";
 }
 
 loginBtn.addEventListener("click", onClickLogin);
