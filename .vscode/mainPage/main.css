@@ -21,9 +21,11 @@ header {
 #mainPageTitle{
     text-align: center;
     width: 100%;
-    margin-left: 15%;
+    margin-left: 19%;
     color: #FFFFFF;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+    font-weight: normal;
+    font-size: 2.5rem;
 }
 .mainPageHeaderBtns{
     display: flex;
@@ -38,6 +40,19 @@ header {
     margin-top: 5%;
     padding: 6% 0% 6% 0%;
     border-radius: 8px;
+    background-color: #FFFFFF;
+}
+
+#loginBtn:hover{
+    background-color: #B69AC8;
+    color: #FFFFFF;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+}
+
+#signUpBtn:hover{
+    background-color: #B69AC8;
+    color: #FFFFFF;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
 }
 
 
@@ -68,9 +83,9 @@ main{
 footer {
   position: fixed;
   bottom: 0;
-  left: 20;
+  left: 20%;
   width: 60%;
-  height: 8%; /* 예시 높이 */
+  height: 10%; /* 예시 높이 */
   background-color: #B69AC8;
   display: flex;
   align-items: center;
@@ -82,4 +97,5 @@ footer {
 .banner h2{
     color: #FFFFFF;
     text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+    font-weight: normal;
 }
