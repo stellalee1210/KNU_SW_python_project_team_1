@@ -7,11 +7,12 @@ function onClickMyPageTitle() {
   console.log("click title");
 }
 function onClickLogin() {
-  //   window.location.href = "login.html";
+  window.location.href = "../loginPage/login.html";
   console.log("click log in");
 }
 
 function onClickSignUp() {
+  window.location.href = "../signupPage/signup.html";
   console.log("click sign up");
 }
 
