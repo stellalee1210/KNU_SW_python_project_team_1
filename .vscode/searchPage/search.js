@@ -1,24 +1,15 @@
 const mainPageTitle = document.getElementById("mainPageTitle");
 const searchBtn = document.getElementById("recipeSearchBtn");
-const loginBtn = document.getElementById("loginBtn");
-const signUpBtn = document.getElementById("signUpBtn");
 
 const tagInput = document.getElementById("tagInput");
 const tagContainer = document.querySelector(".tag-container");
 
-// 키워드 목록 저장용 배열
 let keywords = [];
 
 function onClickMyPageTitle() {
-  console.log("click title");
+  window.location.href = "../mainPage/main.html";
 }
-function onClickLogin() {
-  window.location.href = "../loginPage/login.html";
-}
-function onClickSignUp() {
-  window.location.href = "../signupPage/signup.html";
-  console.log("click sign up");
-}
+
 function onClickSearchRecipe() {
   //console.log("click search recipe");
   console.log("현재 키워드 목록:", keywords);
@@ -61,9 +52,6 @@ function createTag(text) {
   tagContainer.insertBefore(tag, tagInput);
 }
 
-// ✅ 이벤트 연결
-mainPageTitle.addEventListener("click", onClickMyPageTitle);
-searchBtn.addEventListener("click", onClickSearchRecipe);
-loginBtn.addEventListener("click", onClickLogin);
-signUpBtn.addEventListener("click", onClickSignUp);
 tagInput.addEventListener("keydown", onEnterIngredient);
+searchBtn.addEventListener("click", onClickSearchRecipe);
+mainPageTitle.addEventListener("click", onClickMyPageTitle);
