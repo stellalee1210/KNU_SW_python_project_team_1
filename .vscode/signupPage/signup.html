@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>회원가입</title>
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+  <header>
+    <h1 id="mainPageTitle">자취밥</h1>
+  </header>
+
+  <main>
+    <div class="signupContainer">
+      <form>
+        <input id="newUserId" class="signup-input" type="text" placeholder="아이디" required />
+        <input id="newPassword" class="signup-input" type="password" placeholder="비밀번호" required />
+        <input id="newName" class="signup-input" type="text" placeholder="이름" required />
+        <div class="signup-buttons">
+          <button type="button" id="registerBtn">회원가입</button>
+        </div>
+      </form>
+    </div>
+  </main>
+
+  <script src="signup.js"></script>
+</body>
+</html>

@@ -13,9 +13,11 @@ function onClickMyPageTitle() {
   console.log("click title");
 }
 function onClickLogin() {
-  console.log("click log in");
+  window.location.href = "../loginPage/login.html";
+
 }
 function onClickSignUp() {
+  window.location.href = "../signupPage/signup.html";
   console.log("click sign up");
 }
 function onClickSearchRecipe() {
