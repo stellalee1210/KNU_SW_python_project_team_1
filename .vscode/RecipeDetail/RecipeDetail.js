@@ -1,4 +1,12 @@
 document.addEventListener("DOMContentLoaded", () => {
+  // 🔹 로그인한 사용자 이름 표시
+  const username = localStorage.getItem("username");
+  if (username) {
+    const userSpan = document.querySelector(".header-right span");
+    userSpan.textContent = `${username}님`;
+  }
+
+  // 🔸 레시피 데이터 표시
   const recipe = {
     title: "크림 파스타",
     content: "고소한 크림 소스와 쫄깃한 면발의 환상적인 조화!",
@@ -13,8 +21,4 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("recipeNutrient").innerText = recipe.nutrient;
   document.getElementById("recipeImage").src = recipe.image_url;
 
-  // 이전/다음 이미지
-  document.getElementById("prevRecipeImage").src = recipe.prev_image_url;
-  document.getElementById("nextRecipeImage").src = recipe.next_image_url;
 });
-

@@ -73,31 +73,6 @@ main {
   box-sizing: border-box;
 }
 
-/* 레시피 내비게이션 (이전/다음 이미지 등) */
-.recipe-navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 30px;
-}
-
-/* 좌우 사이드 이미지 */
-.side-image {
-  width: 80px;
-  height: 80px;
-  object-fit: cover;
-  border-radius: 8px;
-  filter: brightness(70%);
-  transition: all 0.3s ease;
-  cursor: pointer;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
-}
-
-.side-image:hover {
-  filter: brightness(100%);
-  transform: scale(1.05);
-}
-
 /* 가운데 레시피 콘텐츠 */
 .recipe-center {
   text-align: center;
