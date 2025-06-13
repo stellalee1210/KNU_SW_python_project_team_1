@@ -108,7 +108,6 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ]
 }
-LOGIN_REDIRECT_URL = '/'  # 로그인 성공 후 이동할 경로
 # Internationalization
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
