@@ -18,7 +18,3 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("nextRecipeImage").src = recipe.next_image_url;
 });
 
-// 뒤로가기
-function goBack() {
-  window.history.back();
-}
