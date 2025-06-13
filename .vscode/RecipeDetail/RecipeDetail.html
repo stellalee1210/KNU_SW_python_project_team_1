@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레시피 상세</title>
+  <link rel="stylesheet" href="RecipeDetail.css">
+  <script src="RecipeDetail.js" defer></script>
+</head>
+<body>
+  <header>
+    <div class="header-left">
+      <button onclick="history.back()">← 뒤로가기</button>
+    </div>
+    <div class="header-center">
+      <h1>자취밥</h1>
+    </div>
+    <div class="header-right">
+      <span>##회원님</span>
+    </div>
+  </header>
+
+  <main>
+    <div class="recipe-navigation">
+      <img id="prevRecipeImage" class="side-image" src="" alt="이전 레시피">
+      
+      <div class="recipe-center">
+        <img id="recipeImage" src="" alt="레시피 이미지">
+        <h2 id="recipeTitle">제목</h2>
+        <p id="recipeContent">내용</p>
+        <h3>영양 정보</h3>
+        <p id="recipeNutrient">영양 성분 정보</p>
+      </div>
+
+      <img id="nextRecipeImage" class="side-image" src="" alt="다음 레시피">
+    </div>
+  </main>
+</body>
+</html>
