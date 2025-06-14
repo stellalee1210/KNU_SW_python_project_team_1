@@ -129,9 +129,11 @@ main {
 
 .card img {
   width: 100%;
-  height: auto;
+  height: 180px; /* 원하는 고정 높이 (예: 180px) */
+  object-fit: cover; /* 이미지 비율 유지하며 영역 채움 */
   border-radius: 8px;
 }
+
 
 .card h3 {
   margin: 12px 0 8px;

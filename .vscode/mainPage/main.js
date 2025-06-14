@@ -19,9 +19,11 @@ function onClickSignUp() {
   window.location.href = "../signupPage/signup.html";
   console.log("click sign up");
 }
-function onClickSearchRecipe() {
-  //console.log("click search recipe");
-  console.log("현재 키워드 목록:", keywords);
+async function onClickSearchRecipe() {
+  console.log("현재 키워드 목록:", keywords); // 예: ["김치", "콩나물"]
+  const query = keywords.join("+");
+  localStorage.setItem("ingredient keywords", JSON.stringify(query));
+  console.log("저장된 키워드:", localStorage.getItem("ingredient keywords"));
   window.location.href = "../searchPage/search.html";
 }
 
