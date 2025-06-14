@@ -1,10 +1,12 @@
 # recipes/views.py
-import sys, os, re
+import os, sys, re
+
+from django.http import JsonResponse
 from django.shortcuts import render
 
-# firebase_config.py 위치 경로 추가
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.append(BASE_DIR)
+
 from firebase_config import db
 
 def search_recipes(request):
@@ -48,7 +50,4 @@ def search_recipes(request):
                         'instructions': rec.get('조리 순서', ''),
                     })
 
-    return render(request, 'recipes/search_results.html', {
-        'query': raw_q,
-        'results': results,
-    })
+    return JsonResponse({'query': raw_q, 'results': results})
