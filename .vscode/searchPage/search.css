@@ -102,6 +102,34 @@ main {
 }
 
 
+
+/* 기본적으로 숨겨두기 */
+.hidden {
+  display: none !important;
+}
+
+#loader {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid #512772;
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  z-index: 9999; /* 제일 위로 */
+}
+
+@keyframes spin {
+  0% { transform: translate(-50%, -50%) rotate(0deg); }
+  100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+
+
+
 /* main -> 본문 카드뉴스 */
 
 .card-grid {

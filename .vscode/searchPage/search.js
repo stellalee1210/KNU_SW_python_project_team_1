@@ -6,6 +6,9 @@ const searchBtn = document.getElementById("recipeSearchBtn");
 const tagInput = document.getElementById("tagInput");
 const tagContainer = document.querySelector(".tag-container");
 
+const grid = document.querySelector(".card-grid");
+const paginationContainer = document.querySelector("#pagination");
+
 let storedKeywords = JSON.parse(localStorage.getItem("ingredient keywords"));
 let recipeList;
 let keywords = [];
@@ -42,35 +45,36 @@ function loadStoredKeywordsAsTags() {
       keywords.push(kw);
     }
   });
-
+  currentPage = 1;
   fetchKeyword();
 }
 
 async function fetchRecipe(keyword) {
+  showLoader();
   const url = `http://127.0.0.1:8000/api/search/?q=${keyword}`;
   //console.log("검색 URL:", url);
   try {
     const response = await fetch(url);
-    console.log("검색 결과:", response);
+    //console.log("검색 결과:", response);
     if (!response.ok) throw new Error("서버 응답 오류");
     const data = await response.json();
-    console.log("검색 데이터:", data);
-    const results = data.results;
-    console.log("검색 결과:", results[0].title);
-    if (results) {
-      recipeList = results;
-      console.log("검색된 레시피:", recipeList);
+    //console.log("검색 데이터:", data);
+    //console.log("검색 결과:", results[0].title);
+    recipeList = data.results;
+    if (recipeList) {
       showRecipe();
+      console.log("검색된 레시피:", recipeList);
     } else {
       console.log("검색 결과가 없습니다.");
     }
   } catch (error) {
     console.error("검색 중 오류:", error);
+  } finally {
+    hideLoader();
   }
 }
 
 function showRecipe() {
-  const grid = document.querySelector(".card-grid");
   grid.innerHTML = "";
 
   const startIdx = (currentPage - 1) * recipesPerPage;
@@ -97,12 +101,13 @@ function showRecipe() {
     top: 0,
     behavior: "smooth", // 부드럽게 스크롤
   });
+  const totalPages = Math.ceil(recipeList.length / recipesPerPage);
+  if (currentPage > totalPages) currentPage = totalPages;
 
   renderPagination();
 }
 
 function renderPagination() {
-  const paginationContainer = document.getElementById("pagination");
   paginationContainer.innerHTML = "";
 
   const totalPages = Math.ceil(recipeList.length / recipesPerPage);
@@ -137,6 +142,7 @@ function onClickMyPageTitle() {
 async function onClickSearchRecipe() {
   localStorage.setItem("ingredient keywords", JSON.stringify(keywords));
   const query = keywords.join("+");
+  currentPage = 1;
   fetchKeyword(query); // ✅ 배열이 아닌 문자열로 전달
 }
 
@@ -177,6 +183,18 @@ function createTag(text) {
 
   tag.appendChild(removeBtn);
   tagContainer.insertBefore(tag, tagInput);
+}
+
+function showLoader() {
+  grid.classList.add("hidden");
+  paginationContainer.classList.add("hidden");
+  document.getElementById("loader").classList.remove("hidden");
+}
+
+function hideLoader() {
+  grid.classList.remove("hidden");
+  paginationContainer.classList.remove("hidden");
+  document.getElementById("loader").classList.add("hidden");
 }
 
 document.addEventListener("DOMContentLoaded", () => loadStoredKeywordsAsTags());
