@@ -76,3 +76,9 @@ main {
 .signup-buttons button:hover {
     background-color: #6b3e96;
 }
+.input-guide {
+  font-size: 0.75rem;
+  color: gray;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
