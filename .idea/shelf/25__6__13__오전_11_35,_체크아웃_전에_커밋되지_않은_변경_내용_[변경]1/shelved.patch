@@ -1,0 +1,211 @@
+Index: .vscode/mainPage/main.html
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.vscode/mainPage/main.html b/.vscode/mainPage/main.html
+deleted file mode 100644
+--- a/.vscode/mainPage/main.html	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,42 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="ko">
+-<head>
+-  <meta charset="UTF-8" />
+-  <title>자취밥</title>
+-  <link rel="stylesheet" href="./main.css" />
+-  <!-- <link rel="icon" href="logo.png" />  파비콘 설정 -->
+-  <script src="./main.js" defer></script>
+-  <style>
+-    @font-face {
+-    font-family: 'GongGothicMedium';
+-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+-    font-weight: normal;
+-    font-style: normal;
+-}
+-  </style>
+-</head>
+-<body>
+-  <header>
+-    <!-- <img src="logo.png" alt="로고" width="100" /> -->
+-    <h1 id="mainPageTitle">자취밥</h1>
+-    <div class="mainPageHeaderBtns">
+-      <button id="loginBtn">로그인</button>
+-      <button id="signUpBtn">회원가입</button>   
+-    </div> 
+-  </header>
+-
+-  
+-  <main>
+-    <div class="searchBar">
+-      <input type="text" placeholder="재료를 입력하세요..." />
+-      <button id="recipeSearchBtn">검색</button>
+-    </div>
+-  </main>
+-
+-  <footer>
+-    <div class="banner">
+-      <h2> 오늘의 추천 식재료 : </h2>
+-    </div>
+-  </footer>
+-</body>
+-</html>
+Index: .vscode/mainPage/main.js
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.vscode/mainPage/main.js b/.vscode/mainPage/main.js
+deleted file mode 100644
+--- a/.vscode/mainPage/main.js	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,25 +0,0 @@
+-const mainPageTitle = document.getElementById("mainPageTitle");
+-const searchBtn = document.getElementById("recipeSearchBtn");
+-const loginBtn = document.getElementById("loginBtn");
+-const signUpBtn = document.getElementById("signUpBtn");
+-
+-function onClickMyPageTitle() {
+-  console.log("click title");
+-}
+-function onClickLogin() {
+-  //   window.location.href = "login.html";
+-  console.log("click log in");
+-}
+-
+-function onClickSignUp() {
+-  console.log("click sign up");
+-}
+-
+-function onClickSearchRecipe() {
+-  console.log("click search recipe");
+-}
+-
+-mainPageTitle.addEventListener("click", onClickMyPageTitle);
+-searchBtn.addEventListener("click", onClickSearchRecipe);
+-loginBtn.addEventListener("click", onClickLogin);
+-signUpBtn.addEventListener("click", onClickSignUp);
+Index: .vscode/launch.json
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.vscode/launch.json b/.vscode/launch.json
+deleted file mode 100644
+--- a/.vscode/launch.json	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,15 +0,0 @@
+-{
+-    // Use IntelliSense to learn about possible attributes.
+-    // Hover to view descriptions of existing attributes.
+-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+-    "version": "0.2.0",
+-    "configurations": [
+-        {
+-            "type": "chrome",
+-            "request": "launch",
+-            "name": "Launch Chrome against localhost",
+-            "url": "http://localhost:8080",
+-            "webRoot": "${workspaceFolder}"
+-        }
+-    ]
+-}
+\ No newline at end of file
+Index: .vscode/mainPage/main.css
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/.vscode/mainPage/main.css b/.vscode/mainPage/main.css
+deleted file mode 100644
+--- a/.vscode/mainPage/main.css	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,85 +0,0 @@
+-body{
+-    font-family: 'GongGothicMedium', sans-serif;
+-    margin: 0% 20% 0% 20%;
+-    background-color: rgb(136, 94, 167);
+-}
+-
+-header {    
+-  position: fixed;
+-  top: 0;
+-  left: 20%;
+-  width: 60%;
+-  height: 13.5%; /* 예시 높이 */
+-  background-color: #512772; /* 배경색 없으면 스크롤 시 내용 겹쳐 보일 수 있음 */
+-  display: flex;
+-  align-items: center;
+-  justify-content: space-between;
+-  z-index: 1000;
+-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+-}
+-
+-#mainPageTitle{
+-    text-align: center;
+-    width: 100%;
+-    margin-left: 15%;
+-    color: #FFFFFF;
+-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+-}
+-.mainPageHeaderBtns{
+-    display: flex;
+-    flex-direction: column;
+-    text-align: right;
+-    width: 20%;
+-    margin : 1% 4% 1% 5%;
+-}
+-
+-.mainPageHeaderBtns button {
+-    font-family: 'GongGothicMedium', sans-serif;
+-    margin-top: 5%;
+-    padding: 6% 0% 6% 0%;
+-    border-radius: 8px;
+-}
+-
+-
+-main{
+-    margin-bottom: 6%;
+-    background-color: #FFFFFF;
+-    min-height: 100vh;
+-}
+-
+-.searchBar{
+-    text-align: center;
+-}
+-
+-.searchBar input{
+-    font-family: 'GongGothicMedium', sans-serif;
+-    margin-top: 15%;
+-    width: 50%;
+-    padding: 1% 0% 1% 1%;
+-}
+-
+-.searchBar #recipeSearchBtn{
+-    font-family: 'GongGothicMedium', sans-serif;
+-    padding: 0.8% 1.5% 1% 1.5%;
+-    margin-left: 1%;
+-}
+-
+-
+-footer {
+-  position: fixed;
+-  bottom: 0;
+-  left: 20;
+-  width: 60%;
+-  height: 8%; /* 예시 높이 */
+-  background-color: #B69AC8;
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-  z-index: 1000;
+-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+-}
+-
+-.banner h2{
+-    color: #FFFFFF;
+-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+-}
+\ No newline at end of file
+diff --git a/.vscode/mainPage/login.html b/.vscode/mainPage/login.html
+deleted file mode 100644

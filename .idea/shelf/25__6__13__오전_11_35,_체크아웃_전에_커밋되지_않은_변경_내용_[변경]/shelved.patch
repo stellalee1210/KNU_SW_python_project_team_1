@@ -1,0 +1,33 @@
+Index: users/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\r\n\r\n# Create your views here.\r\n# users/views.py\r\nfrom django.contrib.auth.models import User\r\nfrom rest_framework import generics, status\r\nfrom rest_framework.response import Response\r\n\r\nfrom .serializers import RegisterSerializer, LoginSerializer\r\n\r\nclass RegisterView(generics.CreateAPIView):\r\n    serializer_class = RegisterSerializer\r\n\r\nclass LoginView(generics.GenericAPIView):\r\n    serializer_class = LoginSerializer\r\n\r\n    def post(self, request):\r\n        serializer = self.get_serializer(data=request.data)\r\n        serializer.is_valid(raise_exception=True)\r\n        token = serializer.validated_data  # validate()의 리턴값인 token을 받아온다.\r\n\r\n        # ✅ remember_me 체크\r\n        remember_me = request.data.get(\"remember_me\", True)\r\n        if str(remember_me).lower() in [\"false\", \"0\", \"no\"]:  # 문자열로 올 수도 있으니 방어적으로 처리\r\n            request.session.set_expiry(0)  # 브라우저 닫으면 만료\r\n        else:\r\n            request.session.set_expiry(60 * 60 * 24 * 14)  # 2주 정도 유지\r\n        request.session.modified = True\r\n\r\n        expiry = request.session.get_expiry_date()\r\n        print(\"\uD83D\uDD52 세션 만료 시간:\", expiry)\r\n\r\n        return Response({\"token\": token.key, \"expires\" : expiry}, status=status.HTTP_200_OK)\r\n
+===================================================================
+diff --git a/users/views.py b/users/views.py
+--- a/users/views.py	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ b/users/views.py	(date 1749782004864)
+@@ -18,6 +18,9 @@
+         serializer = self.get_serializer(data=request.data)
+         serializer.is_valid(raise_exception=True)
+         token = serializer.validated_data  # validate()의 리턴값인 token을 받아온다.
++        user = token.user
++
++
+ 
+         # ✅ remember_me 체크
+         remember_me = request.data.get("remember_me", True)
+@@ -26,8 +29,11 @@
+         else:
+             request.session.set_expiry(60 * 60 * 24 * 14)  # 2주 정도 유지
+         request.session.modified = True
+-
+         expiry = request.session.get_expiry_date()
++
+         print("🕒 세션 만료 시간:", expiry)
+-
+-        return Response({"token": token.key, "expires" : expiry}, status=status.HTTP_200_OK)
++        print("🔐 로그인한 사용자:", user.username)
++        return Response({"token": token.key,
++                         "expires" : expiry,
++                         "username": user.username},
++                        status=status.HTTP_200_OK)
