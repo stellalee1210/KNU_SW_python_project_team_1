@@ -51,7 +51,7 @@ function loadStoredKeywordsAsTags() {
 
 async function fetchRecipe(keyword) {
   showLoader();
-  const url = `http://127.0.0.1:8000/api/search/?q=${keyword}`;
+  const url = `http://127.0.0.1:8000/api/recipes/search/?q=${keyword}`;
   //console.log("검색 URL:", url);
   try {
     const response = await fetch(url);
