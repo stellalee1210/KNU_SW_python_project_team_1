@@ -7,11 +7,13 @@
     <list default="true" id="94ef1774-155b-45de-938c-837680a2b294" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/firebase_config.py" beforeDir="false" afterPath="$PROJECT_DIR$/firebase_config.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/recipes/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/recipes/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_auth_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/settings.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_auth_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/urls.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/templates/recipes/search_results.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/recipes/tests.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/admin.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/models.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/users/tests.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,16 +48,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "development-back",
-    "last_opened_file_path": "C:/Users/sa802/PycharmProjects/SignUpIn",
-    "settings.editor.selected.configurable": "preferences.fileTypes"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;development-back&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/sa802/PycharmProjects/SignUpIn&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.fileTypes&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\sa802\PycharmProjects\SignUpIn" />
