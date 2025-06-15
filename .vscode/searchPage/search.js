@@ -208,7 +208,7 @@ function onClickGrid() {
       return;
     }
     localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipe));
-    window.location.href = "../RecipeDeatil/RecipeDetail.html";
+    window.location.href = "../RecipeDetail/RecipeDetail.html";
   });
   //localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipeList[currentPage - 1]));
 }
