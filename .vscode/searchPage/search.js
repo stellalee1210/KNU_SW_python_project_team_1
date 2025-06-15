@@ -51,7 +51,7 @@ function loadStoredKeywordsAsTags() {
 
 async function fetchRecipe(keyword) {
   showLoader();
-  const url = `http://127.0.0.1:8000/api/recipes/search/?q=${keyword}`;
+  const url = `http://127.0.0.1:8000/api/search/?q=${keyword}`;
   //console.log("검색 URL:", url);
   try {
     const response = await fetch(url);
@@ -91,6 +91,9 @@ function showRecipe() {
 
     const title = document.createElement("h2");
     title.textContent = recipe.title || "제목 없음";
+
+    // 카드에 정보 저장
+    card.dataset.title = title.textContent;
 
     card.appendChild(img);
     card.appendChild(title);
@@ -197,7 +200,21 @@ function hideLoader() {
   document.getElementById("loader").classList.add("hidden");
 }
 
+function onClickGrid() {
+  const card = document.querySelector(".card");
+
+  recipeList.forEach((recipe) => {
+    if (recipe.title != card.dataset.title) {
+      return;
+    }
+    localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipe));
+    window.location.href = "../RecipeDeatil/RecipeDetail.html";
+  });
+  //localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipeList[currentPage - 1]));
+}
+
 document.addEventListener("DOMContentLoaded", () => loadStoredKeywordsAsTags());
 tagInput.addEventListener("keydown", onEnterIngredient);
 searchBtn.addEventListener("click", onClickSearchRecipe);
 mainPageTitle.addEventListener("click", onClickMyPageTitle);
+grid.addEventListener("click", onClickGrid);
