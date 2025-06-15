@@ -96,4 +96,10 @@ main {
   color: #512772;
 }
 
+#recipeContent {
+  white-space: pre-line;
+  line-height: 1.7;
+  font-size: 1rem;
+  
+}
 
