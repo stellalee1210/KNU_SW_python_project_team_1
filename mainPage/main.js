@@ -5,7 +5,27 @@ const loginBtn = document.getElementById("loginBtn");
 const signUpBtn = document.getElementById("signUpBtn");
 const tagInput = document.getElementById("tagInput");
 const tagContainer = document.querySelector(".tag-container");
+//여기 추가함****************
+  const username = localStorage.getItem("username");
+  const welcomeMessage = document.getElementById("welcomeMessage");
 
+  if (username && welcomeMessage && loginBtn && signUpBtn) {
+    welcomeMessage.textContent = `${username}`;
+    welcomeMessage.style.display = "inline-block";
+    loginBtn.style.display = "none";
+    signUpBtn.style.display = "none";
+    const logoutBtn = document.getElementById("logoutBtn");
+
+   if (logoutBtn) {
+  logoutBtn.style.display = "inline-block"; // ✅ 반드시 보여주기 설정 필요
+
+  logoutBtn.addEventListener("click", function () {
+    localStorage.removeItem("username");
+    alert("로그아웃 되었습니다.");
+    location.reload();
+  });
+ }
+ }//여기까지****************************
 // 키워드 목록 저장용 배열
 let keywords = [];
 
@@ -22,9 +42,10 @@ function onClickSignUp() {
 async function onClickSearchRecipe() {
   console.log("현재 키워드 목록:", keywords); // 예: ["김치", "콩나물"]
   const query = keywords.join("+");
+  const encodedQuery = encodeURIComponent(query);  // 이거 추가함****************
   localStorage.setItem("ingredient keywords", JSON.stringify(keywords));
   console.log("저장된 키워드:", localStorage.getItem("ingredient keywords"));
-  window.location.href = "/searchpage/";
+  window.location.href = `/searchpage/?q=${encodedQuery}`;
 }
 
 // ✅ 키워드 입력 처리

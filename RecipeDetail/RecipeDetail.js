@@ -1,11 +1,32 @@
-function showUserName() {
+/*function showUserName() {
   // 🔹 로그인한 사용자 이름 표시
   const username = localStorage.getItem("username");
   if (username) {
     const userSpan = document.querySelector(".header-right span");
     userSpan.textContent = `${username}님`;
   }
-}
+}*/
+//여기 추가함**************************
+document.addEventListener("DOMContentLoaded", () => {
+  const username = localStorage.getItem("username");
+  const welcomeMessage = document.getElementById("welcomeMessage");
+  const logoutBtn = document.getElementById("logoutBtn");
+
+  if (username && welcomeMessage && logoutBtn) {
+    welcomeMessage.textContent = `${username}님`;
+    welcomeMessage.style.display = "inline-block";
+    logoutBtn.style.display = "inline-block";
+
+    logoutBtn.addEventListener("click", () => {
+      localStorage.removeItem("username");
+      location.href = "/mainpage/";
+    });
+  }
+
+  displayRecipeDetails();  // ✅ 레시피 표시도 이 안에서 실행
+});
+
+//여기까지******************************
 
 function displayRecipeDetails() {
   // 🔸 레시피 데이터 표시
@@ -36,4 +57,4 @@ function modifyRecipe(ingredient) {
   return formattedIngredients;
 }
 
-document.addEventListener("DOMContentLoaded", displayRecipeDetails);
+//document.addEventListener("DOMContentLoaded", displayRecipeDetails);

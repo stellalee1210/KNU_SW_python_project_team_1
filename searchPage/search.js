@@ -1,3 +1,44 @@
+//여기 추가함***************************
+document.addEventListener("DOMContentLoaded", () => {
+  const urlParams = new URLSearchParams(window.location.search);
+  const query = urlParams.get("q");
+  console.log("✅ 쿼리 파라미터 확인:", query);  // ← 이거 반드시 넣어서 확인해봐
+
+  const username = localStorage.getItem("username");
+  const welcomeMessage = document.getElementById("welcomeMessage");
+  const logoutBtn = document.getElementById("logoutBtn");
+  const loginBtn = document.getElementById("loginBtn");
+  const signUpBtn = document.getElementById("signUpBtn");
+
+  if (username && welcomeMessage && logoutBtn && loginBtn && signUpBtn) {
+    welcomeMessage.textContent = `${username}`;
+    welcomeMessage.style.display = "inline-block";
+    logoutBtn.style.display = "inline-block";
+    loginBtn.style.display = "none";
+    signUpBtn.style.display = "none";
+
+    logoutBtn.addEventListener("click", function () {
+      localStorage.removeItem("username");
+      alert("로그아웃 되었습니다.");
+      location.href = "/mainpage/";
+    });
+  }
+
+  if (query) {
+    const decodedKeywords = decodeURIComponent(query).split("+");
+    keywords = [];
+    decodedKeywords.forEach((kw) => {
+      if (!keywords.includes(kw)) {
+        keywords.push(kw);
+        createTag(kw);
+      }
+    });
+    const joinedKeywords = decodedKeywords.join(" ");
+    fetchKeyword(joinedKeywords); // 🟨 URL에서 가져온 키워드로 검색 실행
+  } else {
+    loadStoredKeywordsAsTags(); // 🟨 기본 로컬 저장 키워드 로딩
+  }
+});//여기까지****************************
 const recipeData = JSON.parse(localStorage.getItem("searchResults"));
 
 const mainPageTitle = document.getElementById("mainPageTitle");
@@ -63,7 +104,6 @@ async function fetchRecipe(keyword) {
     recipeList = data.results;
     if (recipeList) {
       showRecipe();
-      console.log("검색 데이터:", data);
       console.log("검색된 레시피:", recipeList);
     } else {
       console.log("검색 결과가 없습니다.");
@@ -147,7 +187,8 @@ async function onClickSearchRecipe() {
   localStorage.setItem("ingredient keywords", JSON.stringify(keywords));
   const query = keywords.join("+");
   currentPage = 1;
-  fetchKeyword(query); // ✅ 배열이 아닌 문자열로 전달
+  const encodedQuery = encodeURIComponent(query); // 🟨 인코딩 추가
+  window.location.href = `/searchpage/?q=${encodedQuery}`; // 🟨 쿼리로 넘김
 }
 
 // ✅ 키워드 입력 처리
@@ -214,7 +255,7 @@ function onClickGrid() {
   //localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipeList[currentPage - 1]));
 }
 
-document.addEventListener("DOMContentLoaded", () => loadStoredKeywordsAsTags());
+//document.addEventListener("DOMContentLoaded", () => loadStoredKeywordsAsTags());
 tagInput.addEventListener("keydown", onEnterIngredient);
 searchBtn.addEventListener("click", onClickSearchRecipe);
 mainPageTitle.addEventListener("click", onClickMyPageTitle);
