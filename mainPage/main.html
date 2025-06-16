@@ -1,11 +1,12 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="ko">
 <head>
   <meta charset="UTF-8" />
   <title>자취밥</title>
-  <link rel="stylesheet" href="./main.css" />
+  <link rel="stylesheet" href="{% static 'main.css' %}">
   <!-- <link rel="icon" href="logo.png" />  파비콘 설정 -->
-  <script src="./main.js" defer></script>
+
   <style>
     @font-face {
     font-family: 'GongGothicMedium';
@@ -44,5 +45,6 @@
       <h2> 오늘의 추천 식재료 : </h2>
     </div>
   </footer>
+  <script src="{% static 'main.js' %}"></script>
 </body>
 </html>

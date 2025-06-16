@@ -1,0 +1,15 @@
+# 가상환경
+.venv/
+
+# 개발용 DB
+db.sqlite3
+
+# Firebase 인증 키 파일
+jcb-db-firebase-adminsdk-fbsvc-8d5973b1a7.json
+
+# 환경 변수
+.env
+
+# IDE 설정 (PyCharm, VSCode 등)
+.idea/
+
