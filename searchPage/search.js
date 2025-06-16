@@ -51,7 +51,7 @@ function loadStoredKeywordsAsTags() {
 
 async function fetchRecipe(keyword) {
   showLoader();
-  const url = `http://127.0.0.1:8000/api/search/?q=${keyword}`;
+  const url = `http://127.0.0.1:8000/api/recipes/search/?q=${keyword}`;
   //console.log("검색 URL:", url);
   try {
     const response = await fetch(url);
@@ -63,6 +63,7 @@ async function fetchRecipe(keyword) {
     recipeList = data.results;
     if (recipeList) {
       showRecipe();
+      console.log("검색 데이터:", data);
       console.log("검색된 레시피:", recipeList);
     } else {
       console.log("검색 결과가 없습니다.");

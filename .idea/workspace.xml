@@ -5,49 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69e355ff-a9c9-45eb-8ef5-222293d0d8eb" name="변경" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13___11_32__________.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13___11_33__________.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13___11_35__________.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13___11_35__________1.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13__오전_11_32,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13__오전_11_33,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13__오전_11_35,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__13__오전_11_35,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]1/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__14___8_12__________.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/shelf/25__6__14__오후_8_12,_체크아웃_전에_커밋되지_않은_변경_내용_[변경]/shelved.patch" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/firebase_config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/mainPage/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipes/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipes/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipes/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipes/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/recipes/views.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_auth_project/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_auth_project/asgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_auth_project/settings.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_auth_project/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/user_auth_project/wsgi.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/apps.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/forms.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/migrations/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/serializers.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" afterPath="$PROJECT_DIR$/launch.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/loginPage/login.css" beforeDir="false" afterPath="$PROJECT_DIR$/loginPage/login.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/loginPage/login.html" beforeDir="false" afterPath="$PROJECT_DIR$/loginPage/login.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/loginPage/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/loginPage/login.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/mainPage/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/mainPage/main.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/mainPage/main.html" beforeDir="false" afterPath="$PROJECT_DIR$/mainPage/main.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/signupPage/signup.css" beforeDir="false" afterPath="$PROJECT_DIR$/signupPage/signup.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/signupPage/signup.html" beforeDir="false" afterPath="$PROJECT_DIR$/signupPage/signup.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/signupPage/signup.js" beforeDir="false" afterPath="$PROJECT_DIR$/signupPage/signup.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/RecipeDetail/RecipeDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/RecipeDetail/RecipeDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/RecipeDetail/RecipeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/searchPage/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/searchPage/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/searchPage/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/user_auth_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/urls.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
