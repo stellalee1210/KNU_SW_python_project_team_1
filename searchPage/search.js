@@ -1,10 +1,12 @@
+//search.js
 //여기 추가함***************************
 document.addEventListener("DOMContentLoaded", () => {
   const urlParams = new URLSearchParams(window.location.search);
   const query = urlParams.get("q");
   console.log("✅ 쿼리 파라미터 확인:", query);  // ← 이거 반드시 넣어서 확인해봐
 
-  const username = localStorage.getItem("username");
+  const token = sessionStorage.getItem("token");
+  const username = sessionStorage.getItem("username");
   const welcomeMessage = document.getElementById("welcomeMessage");
   const logoutBtn = document.getElementById("logoutBtn");
   const loginBtn = document.getElementById("loginBtn");
@@ -18,7 +20,8 @@ document.addEventListener("DOMContentLoaded", () => {
     signUpBtn.style.display = "none";
 
     logoutBtn.addEventListener("click", function () {
-      localStorage.removeItem("username");
+      sessionStorage.removeItem("token");
+      sessionStorage.removeItem("username");
       alert("로그아웃 되었습니다.");
       location.href = "/mainpage/";
     });
@@ -92,6 +95,7 @@ function loadStoredKeywordsAsTags() {
 
 async function fetchRecipe(keyword) {
   showLoader();
+  const token = localStorage.getItem("token");
   const url = `http://127.0.0.1:8000/api/recipes/search/?q=${keyword}`;
   //console.log("검색 URL:", url);
   try {

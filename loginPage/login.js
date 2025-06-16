@@ -1,3 +1,4 @@
+//login.js
 const loginBtn = document.getElementById("loginBtn");
 const signUpBtn = document.getElementById("signUpBtn");
 const mainPageTitle = document.getElementById("mainPageTitle");
@@ -28,8 +29,8 @@ function onClickLogin() {
     return res.json();
   })
   .then(data => {
-    localStorage.setItem("token", data.token);
-    localStorage.setItem("username", data.username);
+    sessionStorage.setItem("token", data.token);
+    sessionStorage.setItem("username", data.username);
     window.location.href = "/mainpage/";
   })
   .catch(err => {

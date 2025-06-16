@@ -4,9 +4,12 @@ from django.shortcuts import render
 # users/views.py
 from rest_framework import generics, status
 from rest_framework.response import Response
+from rest_framework.views import APIView
+from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
 from django.shortcuts import render
 from .serializers import RegisterSerializer, LoginSerializer
+
 
 class RegisterView(generics.CreateAPIView):
     serializer_class = RegisterSerializer
@@ -39,3 +42,11 @@ class LoginView(generics.GenericAPIView):
         expiry = request.session.get_expiry_date()
 
         return Response({"token": token.key, "expires" : expiry, "username": user.username}, status=status.HTTP_200_OK)
+
+
+
+class WhoAmIView(APIView):
+        permission_classes = [IsAuthenticated]
+
+        def get(self, request):
+            return Response({"username": request.user.username})

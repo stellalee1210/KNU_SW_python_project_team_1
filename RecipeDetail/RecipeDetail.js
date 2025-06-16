@@ -1,3 +1,4 @@
+//RecipeDetail.js
 /*function showUserName() {
   // 🔹 로그인한 사용자 이름 표시
   const username = localStorage.getItem("username");
@@ -8,7 +9,7 @@
 }*/
 //여기 추가함**************************
 document.addEventListener("DOMContentLoaded", () => {
-  const username = localStorage.getItem("username");
+  const username = sessionStorage.getItem("username");
   const welcomeMessage = document.getElementById("welcomeMessage");
   const logoutBtn = document.getElementById("logoutBtn");
 
@@ -18,7 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
     logoutBtn.style.display = "inline-block";
 
     logoutBtn.addEventListener("click", () => {
-      localStorage.removeItem("username");
+      sessionStorage.removeItem("token");
+      sessionStorage.removeItem("username");
+      alert("로그아웃 되었습니다.");
       location.href = "/mainpage/";
     });
   }
