@@ -57,7 +57,7 @@ function onClickLogin() {
   window.location.href = "/loginpage/";
 }
 function onClickSignUp() {
-   window.location.href = "/signuppage/";
+  window.location.href = "/signuppage/";
   console.log("click sign up");
 }
 async function onClickSearchRecipe() {

@@ -6,14 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="69e355ff-a9c9-45eb-8ef5-222293d0d8eb" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/loginPage/login.js" beforeDir="false" afterPath="$PROJECT_DIR$/loginPage/login.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mainPage/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/mainPage/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/searchPage/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/user_auth_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_auth_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/users/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/users/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

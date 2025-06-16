@@ -47,7 +47,7 @@ function onClickLogin() {
 
 function onClickSignUp() {
   console.log("click sign up");
-  window.location.href = "../signupPage/signup.html";
+  window.location.href = "/signuppage/";
 }
 
 function onClickMyPageTitle() {
