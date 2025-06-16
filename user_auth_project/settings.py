@@ -66,6 +66,7 @@ TEMPLATES = [
             BASE_DIR / "mainPage",
             BASE_DIR / "signupPage",
             BASE_DIR / "searchPage",
+            BASE_DIR / "RecipeDetail",
                  ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -137,6 +138,7 @@ STATICFILES_DIRS = [
     BASE_DIR / "mainPage",
     BASE_DIR / "signupPage",
     BASE_DIR / "searchPage",
+    BASE_DIR / "RecipeDetail",
 ]
 
 # Default primary key field type

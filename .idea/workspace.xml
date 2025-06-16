@@ -6,12 +6,10 @@
   <component name="ChangeListManager">
     <list default="true" id="69e355ff-a9c9-45eb-8ef5-222293d0d8eb" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/RecipeDetail/RecipeDetail.css" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/RecipeDetail/RecipeDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/RecipeDetail/RecipeDetail.js" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/searchPage/search.css" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/searchPage/search.html" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.vscode/searchPage/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/mainPage/main.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.html" beforeDir="false" afterPath="$PROJECT_DIR$/RecipeDetail/RecipeDetail.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mainPage/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/mainPage/main.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/searchPage/search.js" beforeDir="false" afterPath="$PROJECT_DIR$/searchPage/search.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_auth_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/user_auth_project/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/user_auth_project/urls.py" afterDir="false" />
     </list>
@@ -63,11 +61,11 @@
       <recent name="C:\Users\sa802\PycharmProjects\SignUpIn" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\.vscode\mainPage" />
+      <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\mainPage" />
+      <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\RecipeDetail" />
       <recent name="C:\Users\sa802\PycharmProjects\SignUpIn" />
       <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\static\singupPage" />
-      <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\templates\signupPage" />
-      <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\static\mainPage" />
-      <recent name="C:\Users\sa802\PycharmProjects\SignUpIn\templates\mainPage" />
     </key>
   </component>
   <component name="SharedIndexes">

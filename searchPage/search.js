@@ -140,7 +140,7 @@ function renderPagination() {
 }
 
 function onClickMyPageTitle() {
-  window.location.href = "../mainPage/main.html";
+  window.location.href = "/mainpage/";
 }
 
 async function onClickSearchRecipe() {
@@ -209,7 +209,7 @@ function onClickGrid() {
       return;
     }
     localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipe));
-    window.location.href = "../RecipeDetail/RecipeDetail.html";
+    window.location.href = "/recipedetail/";
   });
   //localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipeList[currentPage - 1]));
 }
