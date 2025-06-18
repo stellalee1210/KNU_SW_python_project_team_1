@@ -12,11 +12,15 @@ document.addEventListener("DOMContentLoaded", () => {
   const username = sessionStorage.getItem("username");
   const welcomeMessage = document.getElementById("welcomeMessage");
   const logoutBtn = document.getElementById("logoutBtn");
+  const loginBtn = document.getElementById("loginBtn");
+  const signUpBtn = document.getElementById("signUpBtn");
 
-  if (username && welcomeMessage && logoutBtn) {
-    welcomeMessage.textContent = `${username}님`;
+    if (username && welcomeMessage && logoutBtn && loginBtn && signUpBtn) {
+    welcomeMessage.innerHTML = `${username}님,<br>안녕하세요!`;
     welcomeMessage.style.display = "inline-block";
     logoutBtn.style.display = "inline-block";
+    loginBtn.style.display = "none";
+    signUpBtn.style.display = "none";
 
     logoutBtn.addEventListener("click", () => {
       sessionStorage.removeItem("token");

@@ -50,6 +50,10 @@ header {
   background-color: #FFFFFF;
 }
 
+#welcomeMessage {
+  color: white;
+}
+
 #loginBtn:hover,
 #signUpBtn:hover {
   background-color: #B69AC8;
