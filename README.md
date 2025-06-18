@@ -51,5 +51,35 @@
 
 ---
 
-## 🌿 프로젝트 구조 (예시)
+## 🌿 프로젝트 구조 
+
+📦 project-root/
+┣ 📂frontend/
+┃ ┣ 📜index.html
+┃ ┣ 📜recipeDetail.html
+┣ 📂backend/
+┃ ┣ 📜views.py
+┃ ┣ 📜urls.py
+┣ 📂static/
+┃ ┣ 📜style.css
+┣ 📂data/
+┃ ┣ 📜recipes.json
+┣ 📜README.md
+┣ 📜requirements.txt
+
+## 🌱 브랜치 전략
+
+| 브랜치 이름 | 설명 |
+|-------------|------|
+| `main` | 최종 배포 버전 |
+| `feature/login` | 로그인/회원가입 기능 개발 |
+| `feature/search` | 재료 검색 및 레시피 추천 기능 |
+| `feature/frontend` | HTML/CSS 프론트 페이지 구현 |
+
+---
+
+## 📎 기타 사항
+
+- 레시피 데이터는 실제 요리 웹사이트에서 크롤링하여 가공한 JSON 형식입니다.
+- 모든 코드와 리소스는 오픈소스로 제공되며, 학습 목적에 한하여 자유롭게 사용할 수 있습니다.
 
