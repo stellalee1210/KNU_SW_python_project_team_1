@@ -126,7 +126,7 @@
 - 모든 코드와 리소스는 오픈소스로 제공되며, 학습 목적에 한하여 자유롭게 사용할 수 있습니다.
 - 깃허브 링크
 <p align="center">
-  <a href="https://github.com/your-repo"><img src="https://img.shields.io/badge/GitHub-프로젝트-blue?logo=github" alt="GitHub 링크"></a>
+  <a href="https://github.com/your-repo"><img src="[https://img.shields.io/badge/GitHub-프로젝트-blue?logo=github](https://github.com/stellalee1210/KNU_SW_python_project_team_1)" alt="GitHub 링크"></a>
 </p>
   
 ## 🔐 Firebase 연동 정보
