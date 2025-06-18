@@ -81,7 +81,7 @@
 <details>
 <summary><strong>🌿 Git Branch Strategy (click to expand)</strong></summary>
 
-<!-- ✅ 유지 브랜치 & 🔴 삭제 대상 브랜치를 표로 정리 -->
+<!-- ✅ 브랜치 소개 -->
 
 <table>
   <thead>
@@ -93,22 +93,16 @@
     </tr>
   </thead>
   <tbody>
-    <!-- ✅ 유지 브랜치 -->
+    <!-- ✅ 브랜치 -->
     <tr><td><code>main</code></td><td>최종 통합된 배포 코드</td><td>✅ 유지</td><td>-</td></tr>
     <tr><td><code>RecipeDetail</code></td><td>레시피 상세페이지 + 정다은 작업 전체 포함</td><td>✅ 유지</td><td>정다은</td></tr>
-    <tr><td><code>SignInUpAPI</code></td><td>최종 로그인/회원가입 API 구현</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>SignInUpAPI</code></td><td>최종 로그인/회원가입 API 구현</td><td>✅ 유지</td><td>송재현</td></tr>
     <tr><td><code>crawling</code></td><td>전처리된 '만개의 레시피' 크롤링 데이터</td><td>✅ 유지</td><td>송재현</td></tr>
-    <tr><td><code>develop-merge-test</code></td><td>프론트, 백, API 최종 통합 테스트 브랜치</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>develop-merge-test</code></td><td>프론트, 백, API 최종 통합 테스트 브랜치</td><td>✅ 유지</td><td>송재현, 이여빈</td></tr>
     <tr><td><code>development</code></td><td>중간 버전: 프론트엔드 통합 개발</td><td>✅ 유지</td><td>전체</td></tr>
-    <tr><td><code>development-back</code></td><td>중간 버전: 백엔드 통합 개발</td><td>✅ 유지</td><td>전체</td></tr>
-    <tr><td><code>firebase_search</code></td><td>검색 기능용 API 개발</td><td>✅ 유지</td><td>전체</td></tr>
-
-    <!-- 🔴 삭제 대상 -->
-    <tr><td><code>SignUpIn</code></td><td>정다은의 실수로 만든 브랜치</td><td>🗑️ 삭제 예정</td><td>정다은</td></tr>
-    <tr><td><code>SignUpInAPI</code></td><td>회원가입 API 실패 버전</td><td>🗑️ 삭제 예정</td><td>이여빈</td></tr>
-    <tr><td><code>intergrateCode</code></td><td>중복된 통합 브랜치</td><td>🗑️ 삭제 예정</td><td>이여빈</td></tr>
-    <tr><td><code>searchDB</code></td><td>DB 연결 시도 실패 버전</td><td>🗑️ 삭제 예정</td><td>이여빈</td></tr>
-    <tr><td><code>master</code></td><td>Firebase 연동 실패 버전</td><td>🗑️ 삭제 예정</td><td>송재현</td></tr>
+    <tr><td><code>development-back</code></td><td>중간 버전: 백엔드 통합 개발</td><td>✅ 유지</td><td>송재현</td></tr>
+    <tr><td><code>firebase_search</code></td><td>검색 기능용 API 개발</td><td>✅ 유지</td><td>송재현</td></tr>
+    <tr><td><code>loginPage</code></td><td>로그린/회원가입 UI(버전관리)</td><td>✅ 유지</td><td>정다은</td></tr>
   </tbody>
 </table>
 
@@ -116,17 +110,18 @@
 
 <hr>
 
-🌿 브랜치 전략 
-
-
 
 ## 📎 기타 사항
 
 - 레시피 데이터는 실제 요리 웹사이트에서 크롤링하여 가공한 JSON 형식입니다.
 - 모든 코드와 리소스는 오픈소스로 제공되며, 학습 목적에 한하여 자유롭게 사용할 수 있습니다.
-- 깃허브 링크
+
+## 🔗 GitHub 링크
+
 <p align="center">
-  <a href="https://github.com/your-repo"><img src="[https://img.shields.io/badge/GitHub-프로젝트-blue?logo=github](https://github.com/stellalee1210/KNU_SW_python_project_team_1)" alt="GitHub 링크"></a>
+  <a href="https://github.com/stellalee1210/KNU_SW_python_project_team_1">
+    <img src="https://img.shields.io/badge/GitHub-프로젝트-blue?logo=github" alt="GitHub 링크">
+  </a>
 </p>
   
 ## 🔐 Firebase 연동 정보
