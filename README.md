@@ -61,25 +61,27 @@
 
   <pre>
 
-project-root/
-├── frontend/
+📦 project-root/
+├── frontend/            # 사용자 인터페이스 (HTML/CSS)
 │   ├── index.html
 │   └── recipeDetail.html
-├── backend/
+├── backend/             # Django 기반 백엔드
 │   ├── views.py
 │   └── urls.py
-├── static/
+├── static/              # 정적 리소스 (CSS)
 │   └── style.css
-├── data/
+├── data/                # 레시피 데이터(JSON)
 │   └── recipes.json
-├── README.md
-└── requirements.txt
+├── requirements.txt     # Python 패키지 리스트
+└── README.md
 
   </pre>
 </details>
 
 <details>
 <summary><strong>🌿 Git Branch Strategy (click to expand)</strong></summary>
+
+<!-- ✅ 유지 브랜치 & 🔴 삭제 대상 브랜치를 표로 정리 -->
 
 <table>
   <thead>
@@ -91,7 +93,7 @@ project-root/
     </tr>
   </thead>
   <tbody>
-    <!-- 🟢 유지 브랜치 -->
+    <!-- ✅ 유지 브랜치 -->
     <tr><td><code>main</code></td><td>최종 통합된 배포 코드</td><td>✅ 유지</td><td>-</td></tr>
     <tr><td><code>RecipeDetail</code></td><td>레시피 상세페이지 + 정다은 작업 전체 포함</td><td>✅ 유지</td><td>정다은</td></tr>
     <tr><td><code>SignInUpAPI</code></td><td>최종 로그인/회원가입 API 구현</td><td>✅ 유지</td><td>전체</td></tr>
@@ -100,8 +102,6 @@ project-root/
     <tr><td><code>development</code></td><td>중간 버전: 프론트엔드 통합 개발</td><td>✅ 유지</td><td>전체</td></tr>
     <tr><td><code>development-back</code></td><td>중간 버전: 백엔드 통합 개발</td><td>✅ 유지</td><td>전체</td></tr>
     <tr><td><code>firebase_search</code></td><td>검색 기능용 API 개발</td><td>✅ 유지</td><td>전체</td></tr>
-    <tr><td><code>searchPage</code></td><td>검색 페이지 UI 구성</td><td>✅ 유지</td><td>정다은</td></tr>
-    <tr><td><code>loginPage</code></td><td>초기 로그인/회원가입 UI</td><td>✅ 유지</td><td>정다은</td></tr>
 
     <!-- 🔴 삭제 대상 -->
     <tr><td><code>SignUpIn</code></td><td>정다은의 실수로 만든 브랜치</td><td>🗑️ 삭제 예정</td><td>정다은</td></tr>
@@ -124,4 +124,12 @@ project-root/
 
 - 레시피 데이터는 실제 요리 웹사이트에서 크롤링하여 가공한 JSON 형식입니다.
 - 모든 코드와 리소스는 오픈소스로 제공되며, 학습 목적에 한하여 자유롭게 사용할 수 있습니다.
+- 깃허브 링크
+<p align="center">
+  <a href="https://github.com/your-repo"><img src="https://img.shields.io/badge/GitHub-프로젝트-blue?logo=github" alt="GitHub 링크"></a>
+</p>
+  
+## 🔐 Firebase 연동 정보
 
+- 프로젝트 내에서는 Firebase API 키를 `.env` 또는 `firebase_config.js`로 분리하여 관리합니다.
+- 민감한 정보는 GitHub에 업로드되지 않도록 `.gitignore`로 관리해주세요.
