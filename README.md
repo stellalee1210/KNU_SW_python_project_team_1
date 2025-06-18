@@ -79,23 +79,38 @@ project-root/
 </details>
 
 <details>
-  <summary><strong>🌿 Git Branch Strategy (click to expand)</strong></summary>
+<summary><strong>🌿 Git Branch Strategy (click to expand)</strong></summary>
 
-  <table>
-    <thead>
-      <tr>
-        <th align="left">Branch</th>
-        <th align="left">Purpose</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr><td><code>main</code></td><td>Stable production releases</td></tr>
-      <tr><td><code>feature/login</code></td><td>Authentication (login / signup)</td></tr>
-      <tr><td><code>feature/search</code></td><td>Ingredient search &amp; recipe recommendation</td></tr>
-      <tr><td><code>feature/frontend</code></td><td>UI layout / styling</td></tr>
-      <tr><td><code>feature/crawling</code></td><td>Recipe crawling &amp; data pipeline</td></tr>
-    </tbody>
-  </table>
+<table>
+  <thead>
+    <tr>
+      <th>Branch</th>
+      <th>설명</th>
+      <th>상태</th>
+      <th>작성자</th>
+    </tr>
+  </thead>
+  <tbody>
+    <!-- 🟢 유지 브랜치 -->
+    <tr><td><code>main</code></td><td>최종 통합된 배포 코드</td><td>✅ 유지</td><td>-</td></tr>
+    <tr><td><code>RecipeDetail</code></td><td>레시피 상세페이지 + 정다은 작업 전체 포함</td><td>✅ 유지</td><td>정다은</td></tr>
+    <tr><td><code>SignInUpAPI</code></td><td>최종 로그인/회원가입 API 구현</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>crawling</code></td><td>전처리된 '만개의 레시피' 크롤링 데이터</td><td>✅ 유지</td><td>송재현</td></tr>
+    <tr><td><code>develop-merge-test</code></td><td>프론트, 백, API 최종 통합 테스트 브랜치</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>development</code></td><td>중간 버전: 프론트엔드 통합 개발</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>development-back</code></td><td>중간 버전: 백엔드 통합 개발</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>firebase_search</code></td><td>검색 기능용 API 개발</td><td>✅ 유지</td><td>전체</td></tr>
+    <tr><td><code>searchPage</code></td><td>검색 페이지 UI 구성</td><td>✅ 유지</td><td>정다은</td></tr>
+    <tr><td><code>loginPage</code></td><td>초기 로그인/회원가입 UI</td><td>✅ 유지</td><td>정다은</td></tr>
+
+    <!-- 🔴 삭제 대상 -->
+    <tr><td><code>SignUpIn</code></td><td>정다은의 실수로 만든 브랜치</td><td>🗑️ 삭제 예정</td><td>정다은</td></tr>
+    <tr><td><code>SignUpInAPI</code></td><td>회원가입 API 실패 버전</td><td>🗑️ 삭제 예정</td><td>이여빈</td></tr>
+    <tr><td><code>intergrateCode</code></td><td>중복된 통합 브랜치</td><td>🗑️ 삭제 예정</td><td>이여빈</td></tr>
+    <tr><td><code>searchDB</code></td><td>DB 연결 시도 실패 버전</td><td>🗑️ 삭제 예정</td><td>이여빈</td></tr>
+    <tr><td><code>master</code></td><td>Firebase 연동 실패 버전</td><td>🗑️ 삭제 예정</td><td>송재현</td></tr>
+  </tbody>
+</table>
 
 </details>
 
