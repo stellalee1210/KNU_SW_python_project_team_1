@@ -47,36 +47,63 @@
 ## 🚀 프로젝트 목표
 
 > 자취생이 냉장고 속 남은 재료만으로도  
-> **쉽고 빠르게 균형 잡힌 식사를 할 수 있는 방법**을 제공합니다.
+> **쉽고 빠르게 균형 잡힌 레시피를 제공받을 수 있는 방법**을 제공합니다.
+> 로그인 하지 않고도 편리하게 사용가능합니다.
+> 귀찮은 단계없이 실속있는 사용 추구
 
----
-
-## 🌿 프로젝트 구조 
+📦 프로젝트 폴더 구조 
 
 📦 project-root/
-┣ 📂frontend/
-┃ ┣ 📜index.html
-┃ ┣ 📜recipeDetail.html
-┣ 📂backend/
-┃ ┣ 📜views.py
-┃ ┣ 📜urls.py
-┣ 📂static/
-┃ ┣ 📜style.css
-┣ 📂data/
-┃ ┣ 📜recipes.json
-┣ 📜README.md
-┣ 📜requirements.txt
+<hr>
 
-## 🌱 브랜치 전략
+<details>
+  <summary><strong>📦 Project Folder Structure (click to expand)</strong></summary>
 
-| 브랜치 이름 | 설명 |
-|-------------|------|
-| `main` | 최종 배포 버전 |
-| `feature/login` | 로그인/회원가입 기능 개발 |
-| `feature/search` | 재료 검색 및 레시피 추천 기능 |
-| `feature/frontend` | HTML/CSS 프론트 페이지 구현 |
+  <pre>
 
----
+project-root/
+├── frontend/
+│   ├── index.html
+│   └── recipeDetail.html
+├── backend/
+│   ├── views.py
+│   └── urls.py
+├── static/
+│   └── style.css
+├── data/
+│   └── recipes.json
+├── README.md
+└── requirements.txt
+
+  </pre>
+</details>
+
+<details>
+  <summary><strong>🌿 Git Branch Strategy (click to expand)</strong></summary>
+
+  <table>
+    <thead>
+      <tr>
+        <th align="left">Branch</th>
+        <th align="left">Purpose</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td><code>main</code></td><td>Stable production releases</td></tr>
+      <tr><td><code>feature/login</code></td><td>Authentication (login / signup)</td></tr>
+      <tr><td><code>feature/search</code></td><td>Ingredient search &amp; recipe recommendation</td></tr>
+      <tr><td><code>feature/frontend</code></td><td>UI layout / styling</td></tr>
+      <tr><td><code>feature/crawling</code></td><td>Recipe crawling &amp; data pipeline</td></tr>
+    </tbody>
+  </table>
+
+</details>
+
+<hr>
+
+🌿 브랜치 전략 
+
+
 
 ## 📎 기타 사항
 
