@@ -62,18 +62,62 @@
   <pre>
 
 📦 project-root/
-├── frontend/            # 사용자 인터페이스 (HTML/CSS)
-│   ├── index.html
-│   └── recipeDetail.html
-├── backend/             # Django 기반 백엔드
-│   ├── views.py
-│   └── urls.py
-├── static/              # 정적 리소스 (CSS)
-│   └── style.css
-├── data/                # 레시피 데이터(JSON)
-│   └── recipes.json
-├── requirements.txt     # Python 패키지 리스트
-└── README.md
+├── .idea/                        # PyCharm 프로젝트 설정
+├── RecipeDetail/                 # 레시피 상세 페이지 UI
+│   ├── RecipeDetail.css
+│   ├── RecipeDetail.html
+│   └── RecipeDetail.js
+├── __pycache__/                  # 파이썬 캐시 파일
+├── loginPage/                    # 로그인 페이지 UI
+│   ├── login.css
+│   ├── login.html
+│   └── login.js
+├── mainPage/                     # 메인 페이지 UI 및 이미지
+│   ├── main.css
+│   ├── main.html
+│   ├── main.js
+│   ├── profile_jde.png
+│   ├── profile_sjh.png
+│   └── profile_ybl.png
+├── recipes/                      # 레시피 관련 Django 앱
+│   ├── __pycache__/
+│   ├── migrations/
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── urls.py
+│   └── views.py
+├── searchPage/                   # 검색 결과 페이지 UI
+│   ├── search.css
+│   ├── search.html
+│   └── search.js
+├── signupPage/                   # 회원가입 페이지 UI
+│   ├── signup.css
+│   ├── signup.html
+│   └── signup.js
+├── user_auth_project/            # Django 프로젝트 설정
+│   ├── __pycache__/
+│   ├── __init__.py
+│   ├── asgi.py
+│   ├── settings.py
+│   ├── urls.py
+│   └── wsgi.py
+├── users/                        # 사용자 인증 관련 Django 앱
+│   ├── __pycache__/
+│   ├── migrations/
+│   ├── __init__.py
+│   ├── apps.py
+│   ├── forms.py
+│   ├── serializers.py
+│   ├── urls.py
+│   └── views.py
+├── .gitignore                    # Git 무시 목록 설정
+├── README.md                     # 프로젝트 설명 문서
+├── firebase_config.py            # Firebase 연동 설정
+├── launch.json                   # VSCode 실행 환경 설정
+├── manage.py                     # Django 관리 명령어 실행 스크립트
+├── structure_back.txt            # 백엔드 구조 요약
+├── structure_check.txt           # 체크리스트 및 구조 확인
+└── test.js                       # 초기 테스트용 JS 파일
 
   </pre>
 </details>
