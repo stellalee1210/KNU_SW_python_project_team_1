@@ -1,0 +1,44 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>레시피 상세</title>
+  <link rel="stylesheet" href="{% static 'RecipeDetail.css' %}">
+  <style>
+    @font-face {
+      font-family: 'GongGothicMedium';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+  <script src="{% static 'RecipeDetail.js' %}" defer></script>
+</head>
+<body>
+  <header>
+    <h1 id="RecipeDetailPageTitle">자취밥</h1>
+    <div class="RecipeDetailPageHeaderBtns">
+      <span id="welcomeMessage" style="display: none;"></span>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+      <button id="loginBtn">로그인</button>
+      <button id="signUpBtn">회원가입</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="recipe-navigation">
+      <div class="recipe-center">
+        <img id="recipeImage" src="" alt="레시피 이미지">
+        <h2 id="recipeTitle"></h2>
+        <br>
+        <h3 id="recipeNutrientTitle">재료 정보</h3>
+        <p id="recipeNutrient"></p>
+        <br><hr/><br>
+        <h3 id="recipeContentTitle">조리법</h3>
+        <p id="recipeContent"></p>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

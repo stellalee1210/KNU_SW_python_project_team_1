@@ -1,0 +1,33 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" />
+    <title>자취밥 로그인 페이지</title>
+    <link rel="stylesheet" href="{% static 'login.css' %}">
+    <style>
+        @font-face {
+            font-family: 'GongGothicMedium';
+            src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1 id="mainPageTitle">자취밥</h1>
+    </header>
+    <main>
+        <div class="loginContainer">
+            <input type="text" id="userName" placeholder="아이디" class="login-input" />
+            <input type="password" id="password" placeholder="비밀번호" class="login-input" />
+            <div class="login-buttons">
+                <button id="signUpBtn" style="width: 45%;">회원가입</button>
+                <button id="loginBtn">로그인</button>
+            </div>
+        </div>
+    </main>
+    <script src="{% static 'login.js' %}"></script>
+</body>
+</html>

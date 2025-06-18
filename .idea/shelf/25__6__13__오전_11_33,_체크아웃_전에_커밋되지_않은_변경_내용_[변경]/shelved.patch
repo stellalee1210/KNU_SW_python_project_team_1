@@ -1,0 +1,234 @@
+Index: users/views.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+>from django.shortcuts import render\r\n\r\n# Create your views here.\r\n# users/views.py\r\nfrom django.contrib.auth.models import User\r\nfrom rest_framework import generics, status\r\nfrom rest_framework.response import Response\r\n\r\nfrom .serializers import RegisterSerializer, LoginSerializer\r\n\r\nclass RegisterView(generics.CreateAPIView):\r\n    serializer_class = RegisterSerializer\r\n\r\nclass LoginView(generics.GenericAPIView):\r\n    serializer_class = LoginSerializer\r\n\r\n    def post(self, request):\r\n        serializer = self.get_serializer(data=request.data)\r\n        serializer.is_valid(raise_exception=True)\r\n        token = serializer.validated_data  # validate()의 리턴값인 token을 받아온다.\r\n\r\n        # ✅ remember_me 체크\r\n        remember_me = request.data.get(\"remember_me\", True)\r\n        if str(remember_me).lower() in [\"false\", \"0\", \"no\"]:  # 문자열로 올 수도 있으니 방어적으로 처리\r\n            request.session.set_expiry(0)  # 브라우저 닫으면 만료\r\n        else:\r\n            request.session.set_expiry(60 * 60 * 24 * 14)  # 2주 정도 유지\r\n        request.session.modified = True\r\n\r\n        expiry = request.session.get_expiry_date()\r\n        print(\"\uD83D\uDD52 세션 만료 시간:\", expiry)\r\n\r\n        return Response({\"token\": token.key, \"expires\" : expiry}, status=status.HTTP_200_OK)\r\n
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/users/views.py b/users/views.py
+--- a/users/views.py	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ b/users/views.py	(date 1749781952742)
+@@ -18,6 +18,9 @@
+         serializer = self.get_serializer(data=request.data)
+         serializer.is_valid(raise_exception=True)
+         token = serializer.validated_data  # validate()의 리턴값인 token을 받아온다.
++        user = token.user
++
++
+ 
+         # ✅ remember_me 체크
+         remember_me = request.data.get("remember_me", True)
+@@ -26,8 +29,11 @@
+         else:
+             request.session.set_expiry(60 * 60 * 24 * 14)  # 2주 정도 유지
+         request.session.modified = True
+-
+         expiry = request.session.get_expiry_date()
++
+         print("🕒 세션 만료 시간:", expiry)
+-
+-        return Response({"token": token.key, "expires" : expiry}, status=status.HTTP_200_OK)
++        print("🔐 로그인한 사용자:", user.username)
++        return Response({"token": token.key,
++                         "expires" : expiry,
++                         "username": user.username},
++                        status=status.HTTP_200_OK)
+Index: .vscode/mainPage/main.html
+===================================================================
+diff --git a/.vscode/mainPage/main.html b/.vscode/mainPage/main.html
+deleted file mode 100644
+--- a/.vscode/mainPage/main.html	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,42 +0,0 @@
+-<!DOCTYPE html>
+-<html lang="ko">
+-<head>
+-  <meta charset="UTF-8" />
+-  <title>자취밥</title>
+-  <link rel="stylesheet" href="./main.css" />
+-  <!-- <link rel="icon" href="logo.png" />  파비콘 설정 -->
+-  <script src="./main.js" defer></script>
+-  <style>
+-    @font-face {
+-    font-family: 'GongGothicMedium';
+-    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+-    font-weight: normal;
+-    font-style: normal;
+-}
+-  </style>
+-</head>
+-<body>
+-  <header>
+-    <!-- <img src="logo.png" alt="로고" width="100" /> -->
+-    <h1 id="mainPageTitle">자취밥</h1>
+-    <div class="mainPageHeaderBtns">
+-      <button id="loginBtn">로그인</button>
+-      <button id="signUpBtn">회원가입</button>   
+-    </div> 
+-  </header>
+-
+-  
+-  <main>
+-    <div class="searchBar">
+-      <input type="text" placeholder="재료를 입력하세요..." />
+-      <button id="recipeSearchBtn">검색</button>
+-    </div>
+-  </main>
+-
+-  <footer>
+-    <div class="banner">
+-      <h2> 오늘의 추천 식재료 : </h2>
+-    </div>
+-  </footer>
+-</body>
+-</html>
+Index: .vscode/mainPage/main.js
+===================================================================
+diff --git a/.vscode/mainPage/main.js b/.vscode/mainPage/main.js
+deleted file mode 100644
+--- a/.vscode/mainPage/main.js	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,25 +0,0 @@
+-const mainPageTitle = document.getElementById("mainPageTitle");
+-const searchBtn = document.getElementById("recipeSearchBtn");
+-const loginBtn = document.getElementById("loginBtn");
+-const signUpBtn = document.getElementById("signUpBtn");
+-
+-function onClickMyPageTitle() {
+-  console.log("click title");
+-}
+-function onClickLogin() {
+-  //   window.location.href = "login.html";
+-  console.log("click log in");
+-}
+-
+-function onClickSignUp() {
+-  console.log("click sign up");
+-}
+-
+-function onClickSearchRecipe() {
+-  console.log("click search recipe");
+-}
+-
+-mainPageTitle.addEventListener("click", onClickMyPageTitle);
+-searchBtn.addEventListener("click", onClickSearchRecipe);
+-loginBtn.addEventListener("click", onClickLogin);
+-signUpBtn.addEventListener("click", onClickSignUp);
+Index: .vscode/launch.json
+===================================================================
+diff --git a/.vscode/launch.json b/.vscode/launch.json
+deleted file mode 100644
+--- a/.vscode/launch.json	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,15 +0,0 @@
+-{
+-    // Use IntelliSense to learn about possible attributes.
+-    // Hover to view descriptions of existing attributes.
+-    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+-    "version": "0.2.0",
+-    "configurations": [
+-        {
+-            "type": "chrome",
+-            "request": "launch",
+-            "name": "Launch Chrome against localhost",
+-            "url": "http://localhost:8080",
+-            "webRoot": "${workspaceFolder}"
+-        }
+-    ]
+-}
+\ No newline at end of file
+Index: .vscode/mainPage/main.css
+===================================================================
+diff --git a/.vscode/mainPage/main.css b/.vscode/mainPage/main.css
+deleted file mode 100644
+--- a/.vscode/mainPage/main.css	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
++++ /dev/null	(revision 78b4174dcadac838bb8cff20d119dc39aafa7c9e)
+@@ -1,85 +0,0 @@
+-body{
+-    font-family: 'GongGothicMedium', sans-serif;
+-    margin: 0% 20% 0% 20%;
+-    background-color: rgb(136, 94, 167);
+-}
+-
+-header {    
+-  position: fixed;
+-  top: 0;
+-  left: 20%;
+-  width: 60%;
+-  height: 13.5%; /* 예시 높이 */
+-  background-color: #512772; /* 배경색 없으면 스크롤 시 내용 겹쳐 보일 수 있음 */
+-  display: flex;
+-  align-items: center;
+-  justify-content: space-between;
+-  z-index: 1000;
+-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+-}
+-
+-#mainPageTitle{
+-    text-align: center;
+-    width: 100%;
+-    margin-left: 15%;
+-    color: #FFFFFF;
+-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+-}
+-.mainPageHeaderBtns{
+-    display: flex;
+-    flex-direction: column;
+-    text-align: right;
+-    width: 20%;
+-    margin : 1% 4% 1% 5%;
+-}
+-
+-.mainPageHeaderBtns button {
+-    font-family: 'GongGothicMedium', sans-serif;
+-    margin-top: 5%;
+-    padding: 6% 0% 6% 0%;
+-    border-radius: 8px;
+-}
+-
+-
+-main{
+-    margin-bottom: 6%;
+-    background-color: #FFFFFF;
+-    min-height: 100vh;
+-}
+-
+-.searchBar{
+-    text-align: center;
+-}
+-
+-.searchBar input{
+-    font-family: 'GongGothicMedium', sans-serif;
+-    margin-top: 15%;
+-    width: 50%;
+-    padding: 1% 0% 1% 1%;
+-}
+-
+-.searchBar #recipeSearchBtn{
+-    font-family: 'GongGothicMedium', sans-serif;
+-    padding: 0.8% 1.5% 1% 1.5%;
+-    margin-left: 1%;
+-}
+-
+-
+-footer {
+-  position: fixed;
+-  bottom: 0;
+-  left: 20;
+-  width: 60%;
+-  height: 8%; /* 예시 높이 */
+-  background-color: #B69AC8;
+-  display: flex;
+-  align-items: center;
+-  justify-content: center;
+-  z-index: 1000;
+-  box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
+-}
+-
+-.banner h2{
+-    color: #FFFFFF;
+-    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+-}
+\ No newline at end of file
+diff --git a/.vscode/mainPage/login.html b/.vscode/mainPage/login.html
+deleted file mode 100644

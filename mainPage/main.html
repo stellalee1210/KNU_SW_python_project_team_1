@@ -1,0 +1,67 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <title>자취밥</title>
+  <link rel="stylesheet" href="{% static 'main.css' %}">
+  <style>
+    @font-face {
+      font-family: 'GongGothicMedium';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1 id="mainPageTitle">자취밥</h1>
+    <div class="mainPageHeaderBtns">
+      <span id="welcomeMessage" style="display: none;"></span>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+      <button id="loginBtn">로그인</button>
+      <button id="signUpBtn">회원가입</button>
+    </div>
+  </header>
+
+  <main>
+    <div class="tag-container">
+      <input type="text" id="tagInput" placeholder="키워드를 입력하세요" />
+      <button id="recipeSearchBtn">검색</button>
+    </div>
+
+    <div class="l-content">
+      <p class="intro">오늘 뭐 해먹지?</p>
+      <p class="intro">냉장고 식재료 처리해야 하는데...</p>
+      <p class="intro">그래서 탄생한 "자취밥"!</p>
+      <p class="intro highlight-line"><span class="highlight-text">레시피를 한 눈에!</span></p>
+      <p class="intro">자취생에 의한, 자취생을 위한, 자취생의 프로젝트</p>
+    </div>
+
+    <div class="feature-boxes">
+      <div class="feature-box">✔️ 검색창에 재료 키워드 입력</div>
+      <div class="feature-box">✔️ 추천 레시피 확인</div>
+      <div class="feature-box">✔️ 눌러서 상세 정보 확인</div>
+    </div>
+
+    <div class="developer-section">
+      <h2>개발자 소개</h2>
+      <div class="dev-card">
+        <img src="{% static 'profile_sjh.png' %}" alt="개발자1">
+        <p>송재현 — 백엔드 & DB 담당</p>
+      </div>
+      <div class="dev-card">
+        <img src="{% static 'profile_ybl.png' %}" alt="개발자2">
+        <p>이여빈 — 프론트엔드 & DB 담당</p>
+      </div>
+      <div class="dev-card">
+        <img src="{% static 'profile_jde.png' %}" alt="개발자3">
+        <p>정다은 — 프로젝트 매니저, 프론트엔드, UI 디자인</p>
+      </div>
+    </div>
+  </main>
+
+  <script src="{% static 'main.js' %}"></script>
+</body>
+</html>
