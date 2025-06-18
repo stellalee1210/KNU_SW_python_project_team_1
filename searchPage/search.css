@@ -2,8 +2,13 @@ body {
   font-family: 'GongGothicMedium', sans-serif;
   margin: 0% 20% 0% 20%;
   background-color: rgb(136, 94, 167);
+    animation: fadeIn 1s ease;
 }
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
 /* Header */
 header {
   position: fixed;
@@ -50,6 +55,7 @@ header {
   background-color: #B69AC8;
   color: #FFFFFF;
   text-shadow: 0 2px 5px rgba(0, 0, 0, 0.522);
+  transform: scale(1.05);
 }
 
 /* Main */

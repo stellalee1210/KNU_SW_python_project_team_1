@@ -31,6 +31,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 //여기까지******************************
 
+
+document.getElementById("RecipeDetailPageTitle").addEventListener("click", ()=>{
+  window.location.href = "/mainpage/";
+})
+
 function displayRecipeDetails() {
   // 🔸 레시피 데이터 표시
   const recipe = JSON.parse(localStorage.getItem("selectedRecipeInfo"));

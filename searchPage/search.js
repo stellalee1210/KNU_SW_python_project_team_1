@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const signUpBtn = document.getElementById("signUpBtn");
 
   if (username && welcomeMessage && logoutBtn && loginBtn && signUpBtn) {
-    welcomeMessage.textContent = `${username}`;
+    welcomeMessage.innerHTML = `${username}님,<br>안녕하세요!`;
     welcomeMessage.style.display = "inline-block";
     logoutBtn.style.display = "inline-block";
     loginBtn.style.display = "none";
@@ -246,18 +246,19 @@ function hideLoader() {
   document.getElementById("loader").classList.add("hidden");
 }
 
-function onClickGrid() {
-  const card = document.querySelector(".card");
+function onClickGrid(event) {
+  const clickedCard = event.target.closest(".card");
+  if (!clickedCard) return;
 
-  recipeList.forEach((recipe) => {
-    if (recipe.title != card.dataset.title) {
-      return;
-    }
-    localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipe));
+  const selectedTitle = clickedCard.dataset.title;
+  const selectedRecipe = recipeList.find((recipe) => recipe.title === selectedTitle);
+
+  if (selectedRecipe) {
+    localStorage.setItem("selectedRecipeInfo", JSON.stringify(selectedRecipe));
     window.location.href = "/recipedetail/";
-  });
-  //localStorage.setItem("selectedRecipeInfo", JSON.stringify(recipeList[currentPage - 1]));
+  }
 }
+
 
 //document.addEventListener("DOMContentLoaded", () => loadStoredKeywordsAsTags());
 tagInput.addEventListener("keydown", onEnterIngredient);

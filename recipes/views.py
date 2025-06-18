@@ -16,7 +16,7 @@ def search_recipes(request):
     results = []
 
     if keywords:
-        raw = db.reference('Recipes').get() or {}
+        raw = db.reference('Recipes').order_by_key().limit_to_first(200).get() or {}
         # dict이면 .values(), list이면 그대로 필터
         if isinstance(raw, dict):
             items = raw.values()

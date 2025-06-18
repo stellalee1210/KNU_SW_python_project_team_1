@@ -1,7 +1,3 @@
-<!-- Firebase App (core SDK) -->
-<!--<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-app.js"></script>-->
-<!-- Firestore SDK -->
-<!--<script src="https://www.gstatic.com/firebasejs/10.11.0/firebase-firestore.js"></script>파이어베이스연동.-->
 {% load static %}
 <!DOCTYPE html>
 <html lang="ko">
@@ -9,17 +5,24 @@
   <meta charset="UTF-8">
   <title>레시피 상세</title>
   <link rel="stylesheet" href="{% static 'RecipeDetail.css' %}">
+  <style>
+    @font-face {
+      font-family: 'GongGothicMedium';
+      src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_20-10@1.0/GongGothicMedium.woff') format('woff');
+      font-weight: normal;
+      font-style: normal;
+    }
+  </style>
   <script src="{% static 'RecipeDetail.js' %}" defer></script>
 </head>
 <body>
   <header>
-    <div class="header-center">
-      <h1>자취밥</h1>
-    </div>
-    <div class="header-right">
-    <!-- <span>testuser회원님</span>-->
-       <span id="welcomeMessage" style="display: none;"></span> <!--여기 추가함 -->
-      <button id="logoutBtn" style="display: none;">로그아웃</button><!--여기 추가함 -->
+    <h1 id="RecipeDetailPageTitle">자취밥</h1>
+    <div class="RecipeDetailPageHeaderBtns">
+      <span id="welcomeMessage" style="display: none;"></span>
+      <button id="logoutBtn" style="display: none;">로그아웃</button>
+      <button id="loginBtn">로그인</button>
+      <button id="signUpBtn">회원가입</button>
     </div>
   </header>
 
@@ -34,7 +37,6 @@
         <br><hr/><br>
         <h3 id="recipeContentTitle">조리법</h3>
         <p id="recipeContent"></p>
-        
       </div>
     </div>
   </main>

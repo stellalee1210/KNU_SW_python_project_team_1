@@ -25,7 +25,7 @@ const tagContainer = document.querySelector(".tag-container");
 
         if (response.ok) {
           const data = await response.json();
-          welcomeMessage.textContent = `${data.username}`;
+          welcomeMessage.innerHTML = `${data.username}님,<br>안녕하세요!`;
           welcomeMessage.style.display = "inline-block";
           if (loginBtn) loginBtn.style.display = "none";
           if (signUpBtn) signUpBtn.style.display = "none";
@@ -111,4 +111,24 @@ searchBtn.addEventListener("click", onClickSearchRecipe);
 loginBtn.addEventListener("click", onClickLogin);
 signUpBtn.addEventListener("click", onClickSignUp);
 tagInput.addEventListener("keydown", onEnterIngredient);
+});
+
+window.addEventListener("DOMContentLoaded", () => {
+  const intros = document.querySelectorAll(".l-content .intro");
+  const featureBoxes = document.querySelector(".feature-boxes");
+
+  const lastIntro = intros[intros.length - 1];
+  lastIntro.addEventListener("animationend", () => {
+    // 1초 뒤 intro들 사라짐
+    setTimeout(() => {
+      intros.forEach(p => {
+        p.style.animation = "fadeOutAll 1s ease forwards";
+      });
+    }, 800);
+
+    // 2초 뒤 기능 박스 보여줌
+    setTimeout(() => {
+      featureBoxes.style.display = "flex";
+    }, 2000);
+  });
 });
