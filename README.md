@@ -69,6 +69,68 @@
 
 ---
 
+## 🛠 설치 및 실행 방법
+
+<details>
+<summary><strong>💻 로컬 환경에서 실행하기 (click to expand)</strong></summary>
+
+### 📁 1. 프로젝트 클론
+
+```bash
+git clone https://github.com/stellalee1210/KNU_SW_python_project_team_1.git
+cd KNU_SW_python_project_team_1
+```
+### 🐍 2. 가상환경 설정 및 패키지 설치
+
+```bash
+# 가상환경 생성
+
+python -m venv venv
+
+# 가상환경 활성화
+```bash
+# Windows
+venv\Scripts\activate
+# macOS/Linux
+source venv/bin/activate
+```
+
+# 필수 패키지 설치
+```bash
+pip install -r requirements.txt
+``` 
+
+🔥 3. Firebase 연동 설정
+firebase_config.py 파일에 Firebase Admin SDK 키 경로와 DB URL을 설정
+
+```bash
+# firebase_config.py 예시
+import firebase_admin
+from firebase_admin import credentials, db
+
+cred = credentials.Certificate("path/to/your-firebase-adminsdk.json")
+firebase_admin.initialize_app(cred, {
+    'databaseURL': 'https://your-project-id.firebaseio.com'
+})
+```
+
+🧠 4. Django 서버 실행
+```bash
+# 마이그레이션 적용
+python manage.py makemigrations
+python manage.py migrate
+
+# 개발 서버 실행
+python manage.py runserver
+```
+
+🌐 5. 웹 접속 및 테스트
+- 웹 브라우저에서 [http://127.0.0.1:8000](http://127.0.0.1:8000) 접속
+- 메인 페이지 → 재료 검색 → 상세페이지 흐름 확인
+
+
+---
+
 ## 👨‍💻 팀원 소개
 
 | 이름 | 역할 |
