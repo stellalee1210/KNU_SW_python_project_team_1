@@ -245,6 +245,7 @@ python manage.py runserver
     <tr><td><code>development-back</code></td><td>중간 버전: 백엔드 통합 개발</td><td>✅ 유지</td><td>송재현</td></tr>
     <tr><td><code>firebase_search</code></td><td>검색 기능용 API 개발</td><td>✅ 유지</td><td>송재현</td></tr>
     <tr><td><code>loginPage</code></td><td>로그린/회원가입 UI(버전관리)</td><td>✅ 유지</td><td>정다은</td></tr>
+    <tr><td><code>SearchPage</code></td><td>검색페이지</td><td>✅ 유지</td><td>이여빈</td></tr>
   </tbody>
 </table>
 
